@@ -27,10 +27,7 @@ namespace AmaanWilliams_ST10396397_PROG6221_POE_PART2
 
         public override string ToString()
         {
-            return base.ToString()
-            {
                 return $"{Quantity} {Unit} of {Name} ({Calories} calories)";
-            }
         }
     }
 }
