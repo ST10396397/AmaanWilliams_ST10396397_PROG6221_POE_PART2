@@ -29,7 +29,8 @@ namespace AmaanWilliams_ST10396397_PROG6221_POE_PART2
 
         public int CalculateTotalCalories()
         {
-
+            int totalCalories = Ingredients.Sum(ingredient => ingredient.Calories);
+            return totalCalories;
         }
 
         public void ScaleRecipe(double factor)
