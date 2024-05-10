@@ -8,5 +8,8 @@ namespace AmaanWilliams_ST10396397_PROG6221_POE_PART2
 {
     internal class Recipe
     {
+        public string Name { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
+        public List <string> Steps { get; set; }
     }
 }
