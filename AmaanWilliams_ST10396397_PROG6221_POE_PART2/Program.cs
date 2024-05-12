@@ -103,12 +103,58 @@ class program
 
     static void DisplayAllRecipe()
     {
-        if()
+        if(recipes.Count == 0)
+        {
+            Console.WriteLine("No recipes available.");
+            return;
+        }
+
+        Console.WriteLine("\nAll recipes");
+        foreach (var recipe in recipes.OrderBy(r => r.Name))
+        {
+            Console.WriteLine(recipe.Name);
+        }
     }
 
     static void DisplayRecipe()
     {
+        if(recipes.Count == 0)
+        {
+            Console.WriteLine("No recipes available.");
+            return;
+        }
 
+        Console.WriteLine("Select a recipe:");
+        for (int i = 0; i < recipes.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {recipes[i].Name}");
+        }
+
+        Console.Write("Enter the number of the recipe to display: ");
+        int index = int.Parse(Console.ReadLine()) - 1;
+
+        if (index < 0 || index >= recipes.Count)
+        {
+            Console.WriteLine("Invalid recipe number.");
+            return;
+        }
+
+        Recipe selectedRecipe = recipes[index];
+        Console.WriteLine($"\nRecipe: {selectedRecipe.Name}");
+        Console.WriteLine("Ingredients:");
+        foreach (var ingredient in selectedRecipe.Ingredients)
+        {
+            Console.WriteLine($"- {ingredient}");
+        }
+
+        Console.WriteLine("\nSteps:");
+        for (int i = 0; i < selectedRecipe.Steps.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {selectedRecipe.Steps[i]}");
+        }
+
+        int totalCalories = selectedRecipe.CalculateTotalCalories();
+        Console.WriteLine($"Total calories: {totalCalories}");
     }
 
     static void ScaleRecipe()
