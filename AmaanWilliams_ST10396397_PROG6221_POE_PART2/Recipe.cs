@@ -14,17 +14,19 @@ namespace AmaanWilliams_ST10396397_PROG6221_POE_PART2
 
         public Recipe(string name)
         {
-
+            Name = name;
+            Ingredients = new List<Ingredient>();
+            Steps = new List<string>();
         }
 
         public void AddIngredient(Ingredient ingredient)
         {
-
+            Ingredients.Add(ingredient);
         }
 
         public void AddStep(string step) 
         {
-
+            Steps.Add(step);
         }
 
         public int CalculateTotalCalories()
@@ -35,12 +37,16 @@ namespace AmaanWilliams_ST10396397_PROG6221_POE_PART2
 
         public void ScaleRecipe(double factor)
         {
-
+            foreach (var ingredient in Ingredients)
+            {
+                ingredient.Quantity *= factor;
+            }
         }
 
         public void ClearRecipe()
         {
-
+            Ingredients.Clear();
+            Steps.Clear();
         }
 
 
