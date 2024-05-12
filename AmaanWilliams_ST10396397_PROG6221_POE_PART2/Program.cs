@@ -9,15 +9,18 @@ class program
     {
         while (true)
         {
-            Console.WriteLine("\nOptions:");
+            Console.WriteLine("\u001b[32m\nRecipe Book:");
+            Console.WriteLine("-------------------------------------");
             Console.WriteLine("1. Enter a new recipe ");
             Console.WriteLine("2. Display all recipes");
             Console.WriteLine("3. Display a recipe");
             Console.WriteLine("4. Scale a reccipe");
             Console.WriteLine("5. Clear all recipe");
             Console.WriteLine("6. Exit");
+            Console.WriteLine("-------------------------------------");
 
-            Console.Write("Enter your choice: ");
+            Console.WriteLine("Enter your choice: ");
+            Console.WriteLine("-------------------------------------");
             int choice = int.Parse(Console.ReadLine());
 
             switch (choice)
@@ -50,6 +53,7 @@ class program
 
     static void EnterNewRecipe()
     {
+        Console.WriteLine("-------------------------------------");
         Console.Write("Enter recipe name: ");
         String name = Console.ReadLine();
 

@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace AmaanWilliams_ST10396397_PROG6221_POE_PART2
 {
-    internal class Recipe
+     class Recipe
     {
         public string Name { get; set; }
         public List<Ingredient> Ingredients { get; set; }
         public List <string> Steps { get; set; }
+
 
         public Recipe(string name)
         {
             Name = name;
             Ingredients = new List<Ingredient>();
             Steps = new List<string>();
+         
         }
 
         public void AddIngredient(Ingredient ingredient)
