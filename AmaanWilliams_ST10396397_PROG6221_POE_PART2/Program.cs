@@ -159,17 +159,44 @@ class program
 
     static void ScaleRecipe()
     {
+        if (recipes.Count == 0)
+        {
+            Console.WriteLine("No recipe available");
+            return;
+        }
 
+        Console.WriteLine("Select a recipe to scale:");
+        for (int i = 0; i < recipes.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {recipes[i].Name}");
+        }
+
+        Console.Write("Enter the number of the recipe to scale: ");
+        int index = int.Parse(Console.ReadLine()) - 1;
+
+        if (index < 0 || index >= recipes.Count)
+        {
+            Console.WriteLine("Invalid recipe number.");
+            return;
+        }
+
+        Console.Write("Enter scaling factor (0.5, 2, or 3): ");
+        double factor = double.Parse(Console.ReadLine());
+
+        Recipe selectedRecipe = recipes[index];
+        selectedRecipe.ScaleRecipe(factor);
+        Console.WriteLine($"Recipe '{selectedRecipe.Name}' scaled successfully.");
     }
 
     static void NotifyExceedingCalories(string recipeName)
     {
-
+        Console.WriteLine($"Warning: Total calories for recipe '{recipeName}' exceed 300!");
     }
 
     static void ClearAllRecipe()
     {
-
+        recipes.Clear();
+        Console.WriteLine("All recipes cleared");
     }
 
 }
