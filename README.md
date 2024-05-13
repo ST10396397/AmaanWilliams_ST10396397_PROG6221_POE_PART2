@@ -13,7 +13,7 @@ For this option the user will have to enter the number of ingredients , the quan
 
 For this option the user will have a chance to see all recipes they entered.It will display the ingredients and steps on how to create the recipe.
 
-3) display a recipe
+3 ) display a recipe
 
 For this option the  user will be able to see a sinlge recipe they entered.It will dispaly all the steps and ingredietns and calorie count
 
