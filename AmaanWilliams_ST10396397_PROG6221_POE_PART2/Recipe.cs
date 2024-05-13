@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AmaanWilliams_ST10396397_PROG6221_POE_PART2
 {
+    //Recipe is used to grab the ingredients from theingredient class and add them to the programs class output
      class Recipe
     {
         public string Name { get; set; }

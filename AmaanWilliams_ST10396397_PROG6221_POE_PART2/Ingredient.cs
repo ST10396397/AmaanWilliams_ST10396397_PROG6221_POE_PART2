@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AmaanWilliams_ST10396397_PROG6221_POE_PART2
 {
+    //ingredient classs is used to store the ingredients (Name, Quantity, Unit, Calories and its foodGroup)
     internal class Ingredient
     {
         public string Name {  get; set; }

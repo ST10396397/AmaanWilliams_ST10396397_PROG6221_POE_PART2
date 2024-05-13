@@ -7,6 +7,7 @@ class program
 
     static void Main(string[] args)
     {
+        //Display options for the menu
         while (true)
         {
             Console.WriteLine("\u001b[32m\nRecipe Book:");
@@ -40,6 +41,7 @@ class program
                 case 5:
                     ClearAllRecipe();
                     break;
+                //used to exit the program
                 case 6:
                     Environment.Exit(0);
                     break;
@@ -50,7 +52,7 @@ class program
 
         }
     }
-
+    //option 1 the enter a new recipe
     static void EnterNewRecipe()
     {
         Console.WriteLine("-------------------------------------");
@@ -105,6 +107,7 @@ class program
         Console.WriteLine("Recipe added successfully");
     }
 
+    //option 2 display all the recipes that have been stored.The recipes will store in alphabetical order
     static void DisplayAllRecipe()
     {
         if(recipes.Count == 0)
@@ -112,7 +115,8 @@ class program
             Console.WriteLine("No recipes available.");
             return;
         }
-
+        
+        //Aplhanetical code
         Console.WriteLine("\nAll recipes");
         foreach (var recipe in recipes.OrderBy(r => r.Name))
         {
@@ -120,6 +124,7 @@ class program
         }
     }
 
+    //option 3 display a single recipe from the storage
     static void DisplayRecipe()
     {
         if(recipes.Count == 0)
@@ -161,6 +166,7 @@ class program
         Console.WriteLine($"Total calories: {totalCalories}");
     }
 
+    //option 3 is for scale recipe option. this allows the user to scale any recipe of the choice
     static void ScaleRecipe()
     {
         if (recipes.Count == 0)
@@ -192,11 +198,13 @@ class program
         Console.WriteLine($"Recipe '{selectedRecipe.Name}' scaled successfully.");
     }
 
+    //option 4 is to notify the user if the recipe exceeds 300 calories
     static void NotifyExceedingCalories(string recipeName)
     {
         Console.WriteLine($"Warning: Total calories for recipe '{recipeName}' exceed 300!");
     }
 
+    //option 6 is to clear all the recipes
     static void ClearAllRecipe()
     {
         recipes.Clear();
